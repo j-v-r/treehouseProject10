@@ -131,6 +131,11 @@ $.getJSON(api, function(data) {
 		var isbnSearch = document.getElementById('isbnSearch');
 		var isbnNumber = isbnSearch.value;
 		var search = $('#search');
+		var anchor = document.getElementById('Anchor');
+	
+		while(anchor.nextElementSibling != null) {
+			anchor.nextElementSibling.remove();
+		}
 
 		searchApi += 'ISBN:';
 		searchApi += isbnNumber;
@@ -139,6 +144,7 @@ $.getJSON(api, function(data) {
 
 		$.getJSON(searchApi, (data) => {
 			for(var prop in data) {
+
 				var book = data[prop];
 				var cover = book.cover.medium;
 			
@@ -157,8 +163,9 @@ $.getJSON(api, function(data) {
 
 			isbnSearch.value = '';
 		});
+});
+	
 
-	});
 
 
 
