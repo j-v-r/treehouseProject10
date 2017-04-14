@@ -5,30 +5,52 @@ body {
 	font-family: 'Quicksand', sans-serif;
 }
 
-div.container {
-	padding: 1rem;
-
+div#header,
+div#searchHeader {
+	border-bottom: 1px black solid;
+	color: #7DA7BF;
+	max-width: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
-div#header {
-	border-bottom: 1px black solid;
+div#header > div.container,
+div#searchHeader > div.container{
+	max-width: 100%;
+	padding: 1rem;
+}
+
+div#header div.container > img,
+div#searchHeader div.container > img {
+	display: block;
+	width: 6rem;
+	margin: .5rem auto;
+}
+
+div#header a:last-child,
+div#searchHeader a:last-child {
+	margin-top: 1rem;
+	display: inline-block;
 }
 
 h1 > a {
-	text-decoration: none;
+	text-decoration: underline;
 	font-weight: bold;
 }
 
 h1 > a:visited {
-	color: blue;
+	color: purple;
 }
 
-div#gallery {
+div#gallery,
+div#search {
 	text-align: center;
 	margin-top: 3rem;
+	max-width: 100%;
 }
 
-div#gallery > img {
+div#gallery > img,
+div#search > img {
 	padding: .5rem;
 	border: 1px black solid;
 	border-radius: 2px;
@@ -36,6 +58,14 @@ div#gallery > img {
 	width: 150px;
 	height: 200px;
 	cursor: pointer;
+	box-shadow: 8px 8px 4px #DDD8D5;
+}
+
+div#credit {
+	font-weight: 300;
+	font-size: .75rem;
+	max-width: 100%;
+	padding: .5rem;
 }
 
 div#overlay {
@@ -93,9 +123,7 @@ div#modal > a {
 }
 
 div#modal span {
-	text-decoration: underline;
-	font-weight: bold;
-	font-weight: 300;
+	font-weight: 700;
 }
 
 div#modal > img {
@@ -108,10 +136,30 @@ div#modal > img {
 	div#modal > img {
 		right: 22%;
 	}
+
+	div#search div.container input {
+		width: 50%;
+	}
+
+	div#search div.container input:last-child {
+		width: 25%;
+		margin-left: .5rem;
+	}
 }
 
 
 @media screen and (min-width: 768px) {
+	
+	div#header,
+	div#searchHeader {
+		flex-direction: row;
+	}
+
+	div#header > div.container,
+	div#searchHeader > div.container {
+		width: 50%;
+	}
+
 	div#modal {
 		height: 95%;
 		width: 70%;
@@ -122,6 +170,19 @@ div#modal > img {
 	div#modal > img {
 		right: 35%;
 		margin-top: 3rem;
+	}
+
+	div#search div.container label {
+		margin-right: 1rem;
+	}
+
+	div#search div.container input {
+		width: 40%;
+	}
+
+	div#search div.container input:last-child {
+		width: 15%;
+		margin-left: 1rem;
 	}
 }
 

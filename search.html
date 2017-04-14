@@ -7,20 +7,26 @@
 	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,700" rel="stylesheet">
 	<link rel='stylesheet' href='css/reset.css'>
 	<link rel='stylesheet' href='css/application.css'>
+	<link rel='stylesheet' href='css/search.css'>
 </head>
 <body>
-	<div id='header'>
+	<div id='searchHeader'>
 		<div class='container'>
-			<h1>Web Development Books from <a href='https://openlibrary.org/'>Open Library</a></h1>
-			<a href='search.html'>Search for books...</a>
+			<h1>Search books from <a href='https://openlibrary.org/'>Open Library</a></h1>
+			<a href='index.html'>Home...</a>
 		</div>
 		<div class='container'>
 			<img src='images/book.svg' alt='Book Logo'>
 		</div>
 	</div>
 	
-	<div id='gallery'>
-		
+	<div id='search'>
+		<div class='container'>
+			<p>Example ISBN numbers: 0316781487, 0553589091, 0440121442</p>
+			<label for='isbnSearch'>Search by ISBN:</label>
+			<input type='text' id='isbnSearch' placeholder="ISBN Number...">
+			<input type='button' id='searchBtn' value='Search'>
+		</div>
 	</div>
 
 	<div id='modal'>

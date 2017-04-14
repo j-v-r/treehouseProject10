@@ -1,0 +1,37 @@
+
+div#searchHeader a:last-child {
+	margin-top: 1rem;
+	display: inline-block;
+}
+
+
+div#search div.container {
+	text-align: center;
+	min-height: 20vh;
+}
+
+div#search div.container p {
+	padding: .5rem;
+	font-size: .75rem;
+	font-weight: 300;
+}
+
+div#search div.container label {
+	font-weight: 700;
+}
+
+div#search div.container input {
+	margin: 1rem auto;
+	width: 70%;
+	height: 1.5rem;
+	border: 1px black solid;
+	border-radius: 2px;
+	font-size: 1rem;
+	box-shadow: 8px 8px 4px #DDD8D5;
+	transition: .5s;
+}
+
+div#search div.container input#searchBtn:hover {
+	background-color: #7DA7BF;
+	transform: scale(1.1);
+}
