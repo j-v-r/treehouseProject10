@@ -10,10 +10,10 @@ var searchBtn = $('#searchBtn');
 Build API Function
 ******************/
 
-function buildApi(isbnArray) {
-	for(var i = 0; i < isbnArray.length; i++) {
+function buildApi(bookArray) {
+	for(var i = 0; i < bookArray.length; i++) {
 		api += 'ISBN:';
-		api += isbnArray[i];
+		api += bookArray[i];
 		api += ',';
 	}
 }
@@ -91,13 +91,14 @@ function addImage(image, idName, div) {
 
 buildApi(isbnArray);
 
-api += '&jscmd=data&callback=?';
+api += '&jscmd=data&format=json&callback=?';
 
-$.getJSON(api, function(data) {
+$.getJSON( api, function(data) {
+
 	var gallery = $('#gallery');
 
 	//Loop through data object properties returned by Open Library. Each property is an object for a single book item identified by ISBN#
-
+	
 	for(var prop in data) {
 		var book = data[prop];
 		var cover = book.cover.medium;
@@ -118,7 +119,7 @@ $.getJSON(api, function(data) {
 	
 	closeBtn.click(function() {
 		closeModal();
-	}); // Close lightbox click
+	}); 
 
 }); // end getJSON
 
@@ -140,7 +141,7 @@ $.getJSON(api, function(data) {
 		searchApi += 'ISBN:';
 		searchApi += isbnNumber;
 		searchApi += ',';
-		searchApi += '&jscmd=data&callback=?';
+		searchApi += '&jscmd=data&format=json&callback=?';
 
 		$.getJSON(searchApi, (data) => {
 			for(var prop in data) {
